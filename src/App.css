@@ -1,38 +1,128 @@
-.App {
+
+body {
+  background-color: #D4BDAC;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #e0e0e0; 
+}
+
+.app {
   text-align: center;
+  padding: 20px;
+  color: #2c2c2c;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.note-board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+form {
+  margin-bottom: 20px;
+  background-color: #606676;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(177, 49, 49, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+form input, form textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  background-color: #FEF3E2;
+  color: #110606;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+form textarea {
+  resize: none; 
+  height: 100px; 
+}
+
+form input::placeholder, form textarea::placeholder {
+  color: #a0a0a0;
+}
+
+form label, form button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  color: #e0e0e0;
+}
+
+form button {
+  background: #f44336;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+form button:hover {
+  background: #d32f2f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .notes {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.note {
+  background: #677D6A;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  color: #fffefe;
+  word-wrap: break-word; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note.important {
+  background: #f01d1dab;
+  color: #020000;
+}
+
+.note h3 {
+  margin-top: 0;
+}
+
+.note p {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.note button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.note button:hover {
+  background: #d32f2f;
 }
